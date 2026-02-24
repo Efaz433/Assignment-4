@@ -32,11 +32,11 @@
                 </div>
                 <div class="bg-white px-3 py-6">
                     <p>Interview</p>
-                    <h4 class="text-2xl font-bold text-green-700">0</h4>
+                    <h4 id="total-interview" class="text-2xl font-bold text-green-700">0</h4>
                 </div>
                 <div class="bg-white px-3 py-6">
                     <p>Rejected</p>
-                    <h4 class="text-2xl font-bold text-red-800">0</h4>
+                    <h4 id="total-reject" class="text-2xl font-bold text-red-800">0</h4>
                 </div>
             </div>
         </section>
@@ -50,7 +50,7 @@
                 </div>
             </div>
             <div class="flex items-center font-bold gap-2">
-                <p>8</p>
+                <p id="total">8</p>
                 <p>Jobs</p>
             </div>
         </section>
@@ -69,8 +69,8 @@
                     designers to build clean and
                     user-friendly interfaces.</p>
                 <div>
-                    <button id="job-in-1" class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
             <div class="bg-white space-y-4 p-3 border border-slate-200">
@@ -86,8 +86,8 @@
                     decision-making through
                     data insights.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -103,8 +103,8 @@
                 <p class="text-slate-400">Build server-side applications and APIs. Work with databases and maintain
                     application performance.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -121,8 +121,8 @@
                     prototypes for web
                     applications.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -139,8 +139,8 @@
                     and
                     user interaction.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -156,8 +156,8 @@
                 <p class="text-slate-400">Build modern web applications using React. Work with APIs and create reusable
                     components.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -174,8 +174,8 @@
                     secure
                     networks.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
 
@@ -191,8 +191,8 @@
                     traffic
                     performance.</p>
                 <div>
-                    <button class="btn btn-outline btn-success">Interview</button>
-                    <button class="btn btn-outline btn-error">Rejected</button>
+                    <button class="interview btn btn-outline btn-success">Interview</button>
+                    <button class="reject btn btn-outline btn-error">Rejected</button>
                 </div>
             </div>
         </section>
@@ -205,7 +205,6 @@
     <section id="interview-cards" class="hidden">
     </section>
     <section id="rejected-cards" class="hidden">
-
     </section>
     <script src="./functionality.js"></script>
 </body>
