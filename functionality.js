@@ -1,70 +1,77 @@
-const emptySection = document.getElementById("empty-section");
-const jobCardContainer = document.getElementById("job-cards-container");
-const allJobsBtn = document.getElementById("all-Jobs-btn");
-const interviewJobsBtn = document.getElementById("interview-Jobs-btn");
-const rejectedJobsBtn = document.getElementById("rejected-Jobs-btn");
-const interviewCards = document.getElementById("interview-cards");
-const rejectedCards = document.getElementById("rejected-cards");
-let totalInterview = document.getElementById("total-interview")
-let totalReject = document.getElementById("total-reject")
-let total = document.getElementById("total")
+const noJobSection = document.getElementById("no-job-section");
 
-interviewJobsBtn.addEventListener("click", () => {
-    if (interviewCards.children.length === 0) {
-        jobCardContainer.classList.add("hidden");
-        rejectedCards.classList.add("hidden")
-        emptySection.classList.remove("hidden")
-        total.innerText = interviewCards.children.length
-    } else {
-        jobCardContainer.classList.add("hidden");
-        interviewCards.classList.remove("hidden")
-        emptySection.classList.add("hidden")
-        total.innerText = interviewCards.children.length
-    }
+const allJobCards = document.getElementById("all-job-cards");
 
-})
-rejectedJobsBtn.addEventListener("click", () => {
-    if (rejectedCards.children.length === 0) {
-        jobCardContainer.classList.add("hidden");
-        interviewCards.classList.add("hidden")
-        emptySection.classList.remove("hidden")
-        total.innerText = rejectedCards.children.length
-    } else {
-        jobCardContainer.classList.add("hidden");
-        rejectedCards.classList.remove("hidden")
-        emptySection.classList.add("hidden")
-        total.innerText = rejectedCards.children.length
-    }
-})
-allJobsBtn.addEventListener("click", () => {
-    jobCardContainer.classList.remove("hidden");
-    emptySection.classList.add("hidden");
-    interviewCards.classList.add("hidden")
-    rejectedCards.classList.add("hidden")
-    total.innerText = jobCardContainer.children.length
-})
+const interviewJobCards = document.getElementById("interview-job-cards");
 
+const rejectedJobCards = document.getElementById("rejected-job-cards");
 
-// adding cards to interview section
-const interview = document.querySelectorAll(".interview");
-interview.forEach(btn => {
-    btn.addEventListener("click", () => {
-        let cloneDiv = btn.parentNode.parentNode.cloneNode(true);
-        interviewCards.appendChild(cloneDiv)
-        totalInterview.innerText = interviewCards.children.length;
-    });
+// for toggling btn
+const cmnSectionBtn = document.querySelectorAll(".cmn-section-btn");
+const cardContainer = document.querySelectorAll(".card-container")
+console.log(cardContainer.children)
 
+// to defaulty seclect allJobs btn
+window.addEventListener("DOMContentLoaded", () => {
+    document.getElementById("all-section-btn").click();
 });
 
-// adding cards to reject section
-const reject = document.querySelectorAll(".reject");
-reject.forEach(btn => {
+cmnSectionBtn.forEach(btn => {
     btn.addEventListener("click", () => {
-        let cloneDiv = btn.parentNode.parentNode.cloneNode(true);
-        rejectedCards.appendChild(cloneDiv)
-        totalReject.innerText = rejectedCards.children.length;
-    });
+        cmnSectionBtn.forEach(btn => {
+            // for removing all the blue color
+            btn.classList.remove("bg-blue-800");
+        })
+        // for adding the blue color
+        document.getElementById(btn.getAttribute("id")).classList.add("bg-blue-800");
+        // for toggling between section
+        cardContainer.forEach(con => {
+            con.classList.add("hidden");
+        })
 
+        if (btn.getAttribute("id") === "all-section-btn" && allJobCards.children.length > 0) {
+            allJobCards.classList.remove("hidden");
+        } else if (btn.getAttribute("id") === "interview-section-btn" && interviewJobCards.children.length > 0) {
+            interviewJobCards.classList.remove("hidden");
+        } else if (btn.getAttribute("id") === "rejected-section-btn" && rejectedJobCards.children.length > 0) {
+            rejectedJobCards.classList.remove("hidden")
+        } else {
+            noJobSection.classList.remove("hidden")
+        }
+
+    });
 });
 
+
+
+// document.getElementById("all-section-btn").addEventListener("click", () => {
+//     if (allJobCards.children.length > 0) {
+//         allJobCards.classList.remove("hidden");
+//         noJobSection.classList.add("hidden")
+//         interviewJobCards.classList.add("hidden")
+//         rejectedJobCards.classList.add("hidden")
+//     } else {
+//         noJobSection.classList.remove("hidden")
+//     }
+// })
+// document.getElementById("interview-section-btn").addEventListener("click", () => {
+//     if (interviewJobCards.children.length > 0) {
+//         allJobCards.classList.add("hidden");
+//         noJobSection.classList.add("hidden")
+//         interviewJobCards.classList.remove("hidden")
+//         rejectedJobCards.classList.add("hidden")
+//     } else {
+//         noJobSection.classList.remove("hidden")
+//     }
+// })
+// document.getElementById("rejected-section-btn").addEventListener("click", () => {
+//     if (rejectedJobCards.children.length > 0) {
+//         allJobCards.classList.add("hidden");
+//         noJobSection.classList.add("hidden")
+//         interviewJobCards.classList.add("hidden")
+//         rejectedJobCards.classList.remove("hidden")
+//     } else {
+//         noJobSection.classList.remove("hidden")
+//     }
+// })
 

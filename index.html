@@ -21,191 +21,70 @@
     </style>
 </head>
 
-<body class=" max-w-11/12 mx-auto bg-base-200 ">
-    <section class="space-y-5">
-        <section class="mt-10 space-y-10">
-            <h1 class="text-5xl">Job Application Tracker</h1>
-            <div class="max-w-11/12 mx-auto grid grid-cols-3 gap-3">
-                <div class="bg-white px-3 py-6">
-                    <p>Total</p>
-                    <h4 class="text-2xl font-bold">8</h4>
-                </div>
-                <div class="bg-white px-3 py-6">
-                    <p>Interview</p>
-                    <h4 id="total-interview" class="text-2xl font-bold text-green-700">0</h4>
-                </div>
-                <div class="bg-white px-3 py-6">
-                    <p>Rejected</p>
-                    <h4 id="total-reject" class="text-2xl font-bold text-red-800">0</h4>
-                </div>
+<body class="max-w-[90%] mx-auto bg-base-300 space-y-5">
+    <header class="pt-10 max-w-[95%] mx-auto space-y-5">
+        <h1 class="text-5xl font-bold text-slate-800">Job Application Tracker</h1>
+        <!-- cards amount Shower -->
+        <div class="grid grid-cols-3 gap-2">
+            <!-- total cards amount -->
+            <div class="bg-stone-300 p-2">
+                <p class="text-slate-800">Total</p>
+                <p id="total-amount" class="text-xl font-bold text-slate-800">0</p>
+            </div>
+            <!-- interview cards amount -->
+            <div class="bg-stone-300 p-2">
+                <p>Interwiew</p>
+                <p id="interview-amount" class="text-xl font-bold text-green-800">0</p>
+            </div>
+            <!-- Rejected cards amount -->
+            <div class="bg-stone-300 p-2">
+                <p>Rejected</p>
+                <p id="rejected-amount" class="text-xl font-bold text-red-800">0</p>
+            </div>
+        </div>
+    </header>
+    <hr>
+    <main class="max-w-[95%] mx-auto ">
+        <section>
+            <div class="flex justify-between">
+                <p class="font-bold text-slate-800">Available Jobs</p>
+                <!-- Cureent section job cards amount -->
+                <p class="font-bold text-slate-800"><span id="current-amount">0</span> jobs</p>
+            </div>
+            <!-- section buttons -->
+            <div>
+                <button id="all-section-btn" class="cmn-section-btn btn btn-soft btn-primary text-black">All
+                    Jobs</button>
+                <button id="interview-section-btn"
+                    class="cmn-section-btn btn btn-soft btn-primary text-black">Interview</button>
+                <button id="rejected-section-btn"
+                    class="cmn-section-btn btn btn-soft btn-primary text-black">Rejected</button>
             </div>
         </section>
-        <section class="flex justify-between p-2 items-start  border-t  border-slate-200">
-            <div class="space-y-5">
-                <h4 class="text-2xl">Available Jobs</h4>
-                <div class="space-x-4">
-                    <button id="all-Jobs-btn" class="btn btn-soft btn-primary" selected>All</button>
-                    <button id="interview-Jobs-btn" class="btn btn-soft btn-primary">Interview</button>
-                    <button id="rejected-Jobs-btn" class="btn btn-soft btn-primary">Rejected</button>
-                </div>
+        <!-- all job card section -->
+        <section id="all-job-cards" class="card-container hidden">
+            <div>
+                <P>lorem5</P>
             </div>
-            <div class="flex items-center font-bold gap-2">
-                <p id="total">8</p>
-                <p>Jobs</p>
+            <div>
+                <P>lorem5</P>
             </div>
         </section>
-        <!-- job cards -->
-        <section id="job-cards-container" class="max-w-11/12 mx-auto space-y-10">
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">TechNova Solutions</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
+        <!-- interview job cards section -->
+        <section id="interview-job-cards" class="card-container hidden">
 
-                <p class="text-slate-400">Frontend Web Developer</p>
-                <p class="text-slate-400">Remote . Full-time . $60,000-$80,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Develop responsive websites using HTML, CSS and JavaScript. Collaborate with
-                    designers to build clean and
-                    user-friendly interfaces.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">DataCore Analytics</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">Junior Data Analyst</p>
-                <p class="text-slate-400">Hybrid . Full-time . $50,000-$70,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Analyze business data and prepare reports using Excel and data tools. Support
-                    decision-making through
-                    data insights.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">CloudEdge Systems</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">Backend Developer</p>
-                <p class="text-slate-400">Remote . Full-time . $80,000-$110,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Build server-side applications and APIs. Work with databases and maintain
-                    application performance.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">BrightPixel Studio</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">UI/UX Designer</p>
-                <p class="text-slate-400">Onsite . Full-time . $55,000-$75,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Create modern and user-friendly interface designs. Develop wireframes and
-                    prototypes for web
-                    applications.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">NextGen Soft</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">JavaScript Developer</p>
-                <p class="text-slate-400">Remote . Full-time . $70,000-$95,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Develop dynamic web applications using JavaScript. Improve website performance
-                    and
-                    user interaction.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">SmartWave Technologies</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">React Developer</p>
-                <p class="text-slate-400">Remote . Full-time . $75,000-$100,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Build modern web applications using React. Work with APIs and create reusable
-                    components.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">SecureNet Ltd</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-
-                <p class="text-slate-400">Cyber Security Assistant</p>
-                <p class="text-slate-400">Onsite . Full-time . $65,000-$85,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Monitor system security and identify risks. Assist in maintaining safe and
-                    secure
-                    networks.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
-
-            <div class="bg-white space-y-4 p-3 border border-slate-200">
-                <div class="flex justify-between">
-                    <h4 class="text-2xl">DigitalGrowth Agency</h4>
-                    <i class="fa-solid fa-trash-can border border-slate-200 rounded-full p-2"></i>
-                </div>
-                <p class="text-slate-400">SEO Specialist</p>
-                <p class="text-slate-400">Remote . Full-time . $45,000-$65,000</p>
-                <p class="p-1 bg-slate-200 w-[100px] rounded-sm">Not Applied</p>
-                <p class="text-slate-400">Optimize websites for search engines. Improve website ranking and analyze
-                    traffic
-                    performance.</p>
-                <div>
-                    <button class="interview btn btn-outline btn-success">Interview</button>
-                    <button class="reject btn btn-outline btn-error">Rejected</button>
-                </div>
-            </div>
         </section>
-    </section>
-    <section id="empty-section" class=" flex flex-col space-y-3 items-center p-20 hidden">
-        <img src="./jobs.png" alt="" class="w-[150px]">
-        <h5 class="text-xl font-bold text-center">No Jobs Available</h5>
-        <p class="text-center text-slate-400">Check back soon for new job opportunities</p>
-    </section>
-    <section id="interview-cards" class="hidden">
-    </section>
-    <section id="rejected-cards" class="hidden">
-    </section>
+        <!-- rejected job cards section -->
+        <section id="rejected-job-cards" class="card-container hidden">
+
+        </section>
+        <!-- no job section -->
+        <section id="no-job-section" class="card-container flex flex-col items-center p-20 space-y-5">
+            <img src="./jobs.png" alt="">
+            <h2 class="text-4xl font-bold text-slate-800">No Jobs Available</h2>
+            <p>Come back soon for new job opportunities</p>
+        </section>
+    </main>
     <script src="./functionality.js"></script>
 </body>
 
