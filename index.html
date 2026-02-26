@@ -44,12 +44,12 @@
         </div>
     </header>
     <hr>
-    <main class="max-w-[95%] mx-auto ">
-        <section>
+    <main class="max-w-[95%] mx-auto space-y-10">
+        <section class="space-y-5 ">
             <div class="flex justify-between">
                 <p class="font-bold text-slate-800">Available Jobs</p>
                 <!-- Cureent section job cards amount -->
-                <p class="font-bold text-slate-800"><span id="current-amount">0</span> jobs</p>
+                <p class="font-bold text-slate-800"><span id="section-card-amount">0</span> jobs</p>
             </div>
             <!-- section buttons -->
             <div>
@@ -62,20 +62,257 @@
             </div>
         </section>
         <!-- all job card section -->
-        <section id="all-job-cards" class="card-container hidden">
-            <div>
-                <P>lorem5</P>
+        <section id="all-job-cards" class="card-container hidden space-y-5 py-5">
+            <!-- Card 1 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">TechNova Ltd</p>
+                        <p class="text-slate-400">Frontend Developer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full ">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Full-Time . $40,000-$60,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Build responsive websites using HTML, CSS and JavaScript.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
             </div>
-            <div>
-                <P>lorem5</P>
+
+
+            <!-- Card 2 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">DataWorks Inc</p>
+                        <p class="text-slate-400">Data Analyst</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Onsite . Full-Time . $50,000-$70,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Analyze business data and create reports for decision making.</p>
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card 3 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">CodeCraft</p>
+                        <p class="text-slate-400">Backend Developer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can "></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Part-Time . $30,000-$50,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Create APIs and server-side logic using Node.js.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card 4 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">BrightSoft</p>
+                        <p class="text-slate-400">UI Designer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Contract . $20,000-$40,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Design clean and modern user interfaces for web apps.</p>
+
+                <div>
+                    <!-- cards btn -->
+                    <div>
+                        <button class="btn btn-outline btn-success">Interview</button>
+                        <button class="btn btn-outline btn-error">Rejected</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <!-- Card 5 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">CloudBase</p>
+                        <p class="text-slate-400">Cloud Engineer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Hybrid . Full-Time . $70,000-$90,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Manage cloud infrastructure and deployment systems.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card 6 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">NextGen Apps</p>
+                        <p class="text-slate-400">Android Developer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Full-Time . $45,000-$65,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Develop mobile applications for Android devices.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card 7 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">SecureTech</p>
+                        <p class="text-slate-400">Cyber Security Specialist</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Onsite . Full-Time . $80,000-$110,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Protect systems from cyber attacks and threats.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+
+
+            <!-- Card 8 -->
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">SmartAI</p>
+                        <p class="text-slate-400">Machine Learning Engineer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Full-Time . $90,000-$120,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Build AI models and intelligent applications.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
             </div>
         </section>
         <!-- interview job cards section -->
-        <section id="interview-job-cards" class="card-container hidden">
+        <section id="interview-job-cards" class="card-container hidden space-y-5 py-5 ">
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">TechNova Ltd</p>
+                        <p class="text-slate-400">Frontend Developer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full ">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
 
+                <p class="text-slate-400">Remote . Full-Time . $40,000-$60,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Build responsive websites using HTML, CSS and JavaScript.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
+            <div class="p-5 space-y-5 bg-white rounded-sm">
+                <div class="flex justify-between items-center">
+                    <div>
+                        <p class="text-2xl font-bold text-slate-800">TechNova Ltd</p>
+                        <p class="text-slate-400">Frontend Developer</p>
+                    </div>
+                    <!-- card delete btn -->
+                    <button class="delete-btn btn btn-soft p-5 rounded-full ">
+                        <i class="fa-solid fa-trash-can"></i>
+                    </button>
+                </div>
+
+                <p class="text-slate-400">Remote . Full-Time . $40,000-$60,000</p>
+                <p class="w-[120px] bg-slate-400 p-3 rounded-sm">Not Applied</p>
+                <p class="text-slate-400">Build responsive websites using HTML, CSS and JavaScript.</p>
+
+                <!-- cards btn -->
+                <div>
+                    <button class="btn btn-outline btn-success">Interview</button>
+                    <button class="btn btn-outline btn-error">Rejected</button>
+                </div>
+            </div>
         </section>
         <!-- rejected job cards section -->
-        <section id="rejected-job-cards" class="card-container hidden">
+        <section id="rejected-job-cards" class="card-container hidden space-y-5 py-5">
 
         </section>
         <!-- no job section -->
