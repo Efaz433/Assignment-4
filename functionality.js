@@ -7,9 +7,10 @@ const interviewJobCards = document.getElementById("interview-job-cards");
 
 const rejectedJobCards = document.getElementById("rejected-job-cards");
 
-
 const cmnSectionBtn = document.querySelectorAll(".cmn-section-btn");
+
 const cardContainer = document.querySelectorAll(".card-container");
+
 // to defaulty seclect allJobs btn
 window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("all-section-btn").click();
@@ -30,15 +31,6 @@ cmnSectionBtn.forEach(btn => {
         togglingFunction(btnId);
     });
 });
-
-// for deleteing cards 
-document.querySelector("main").addEventListener("click", (event) => {
-    if (event.target.classList.contains("fa-trash-can")) {
-        event.target.parentNode.parentNode.parentNode.remove();
-    }
-    togglingFunction(btnId)
-
-})
 
 // section toggle
 function togglingFunction(btnId) {
@@ -66,6 +58,73 @@ function togglingFunction(btnId) {
     }
 }
 
+// for different card button 
+document.querySelector("main").addEventListener("click", (event) => {
+    // for interview button 
+    if (event.target.classList.contains("interview-btn")) {
+        // if clicked this style will change
+        event.target.parentNode.parentNode.classList.remove("border-l-6", "border-red-800")
+        event.target.parentNode.previousElementSibling.previousElementSibling.classList.remove("border-2", "border-red-800", "text-red-800", "font-bold", "bg-white")
+        event.target.parentNode.parentNode.classList.add("border-l-6", "border-green-800")
+        event.target.parentNode.previousElementSibling.previousElementSibling.classList.add("border-2", "border-green-800", "text-green-800", "font-bold", "bg-white")
+        // for updating "not applied" innertext
+        event.target.parentNode.previousElementSibling.previousElementSibling.innerText = "Interview";
 
+        let cloneDiv = event.target.parentNode.parentNode.cloneNode(true);
+        let title = cloneDiv.children[0].children[0].children[0].innerText;
+        let interviewExists = false;
+        for (cards of interviewJobCards.children) {
+            const jobTitle = cards.querySelector(".job-title").innerText;
+            if (jobTitle === title) {
+                interviewExists = true;
+                break;
+            }
+        }
+        if (!interviewExists) {
+            interviewJobCards.append(cloneDiv);
+        }
+        for (cards of rejectedJobCards.children) {
+            const jobTitle = cards.querySelector(".job-title").innerText;
+            if (jobTitle === title) {
+                cards.remove();
+                break;
+            }
+        }
 
+    }
+    // for reject button
+    if (event.target.classList.contains("reject-btn")) {
+        // if clicked this style will change
+        event.target.parentNode.parentNode.classList.add("border-l-6", "border-red-800")
+        event.target.parentNode.previousElementSibling.previousElementSibling.classList.add("border-2", "border-red-800", "text-green-800", "font-bold", "bg-white")
+        // for updating "not applied" innertext
+        event.target.parentNode.previousElementSibling.previousElementSibling.innerText = "Rejected";
+
+        let cloneDiv = event.target.parentNode.parentNode.cloneNode(true);
+        let title = cloneDiv.children[0].children[0].children[0].innerText;
+        let rejectExists = false;
+        for (cards of rejectedJobCards.children) {
+            const jobTitle = cards.querySelector(".job-title").innerText;
+            if (jobTitle === title) {
+                rejectExists = true;
+                break;
+            }
+        }
+        if (!rejectExists) {
+            rejectedJobCards.append(cloneDiv);
+        }
+        for (cards of interviewJobCards.children) {
+            const jobTitle = cards.querySelector(".job-title").innerText;
+            if (jobTitle === title) {
+                cards.remove();
+                break;
+            }
+        }
+    }
+    // for deleting card
+    if (event.target.classList.contains("fa-trash-can")) {
+        event.target.parentNode.parentNode.parentNode.remove();
+    }
+    togglingFunction(btnId)
+})
 
