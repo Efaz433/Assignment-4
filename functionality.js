@@ -55,6 +55,7 @@ function togglingFunction(btnId) {
         noJobSection.classList.remove("hidden");
         // for updating the section card amount
         document.getElementById("section-card-amount").innerText = 0;
+
     }
 }
 
@@ -87,6 +88,16 @@ document.querySelector("main").addEventListener("click", (event) => {
             const jobTitle = cards.querySelector(".job-title").innerText;
             if (jobTitle === title) {
                 cards.remove();
+                for (card of allJobCards.children) {
+                    const jobTitle = card.querySelector(".job-title")
+                    if (jobTitle.innerText === title) {
+                        card.classList.remove("border-l-6", "border-red-800")
+                        card.children[2].classList.remove("border-2", "border-red-800", "text-red-800", "font-bold", "bg-white")
+                        card.classList.add("border-l-6", "border-green-800")
+                        card.children[2].classList.add("border-2", "border-green-800", "text-green-800", "font-bold", "bg-white")
+                        card.children[2].innerText = "Interview"
+                    }
+                }
                 break;
             }
         }
@@ -95,8 +106,10 @@ document.querySelector("main").addEventListener("click", (event) => {
     // for reject button
     if (event.target.classList.contains("reject-btn")) {
         // if clicked this style will change
+        event.target.parentNode.parentNode.classList.remove("border-l-6", "border-green-800")
+        event.target.parentNode.previousElementSibling.previousElementSibling.classList.remove("border-2", "border-red-800", "text-green-800", "font-bold", "bg-white")
         event.target.parentNode.parentNode.classList.add("border-l-6", "border-red-800")
-        event.target.parentNode.previousElementSibling.previousElementSibling.classList.add("border-2", "border-red-800", "text-green-800", "font-bold", "bg-white")
+        event.target.parentNode.previousElementSibling.previousElementSibling.classList.add("border-2", "border-red-800", "text-red-800", "font-bold", "bg-white")
         // for updating "not applied" innertext
         event.target.parentNode.previousElementSibling.previousElementSibling.innerText = "Rejected";
 
@@ -117,6 +130,16 @@ document.querySelector("main").addEventListener("click", (event) => {
             const jobTitle = cards.querySelector(".job-title").innerText;
             if (jobTitle === title) {
                 cards.remove();
+                for (card of allJobCards.children) {
+                    const jobTitle = card.querySelector(".job-title")
+                    if (jobTitle.innerText === title) {
+                        card.classList.remove("border-l-6", "border-green-800")
+                        card.children[2].classList.remove("border-2", "border-green-800", "text-green-800", "font-bold", "bg-white")
+                        card.classList.add("border-l-6", "border-red-800")
+                        card.children[2].classList.add("border-2", "border-red-800", "text-red-800", "font-bold", "bg-white")
+                        card.children[2].innerText = "Rejected"
+                    }
+                }
                 break;
             }
         }
@@ -126,5 +149,9 @@ document.querySelector("main").addEventListener("click", (event) => {
         event.target.parentNode.parentNode.parentNode.remove();
     }
     togglingFunction(btnId)
+    // for updating the card shower amount
+    document.getElementById("total-amount").innerText = allJobCards.children.length;
+    document.getElementById("interview-amount").innerText = interviewJobCards.children.length;
+    document.getElementById("rejected-amount").innerText = rejectedJobCards.children.length;
 })
 
